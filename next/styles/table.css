@@ -1,0 +1,13 @@
+.table-frame {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-frame, .table-frame th, .table-frame td {
+    border: 1px solid black;
+}
+
+.table-frame th, .table-frame td {
+    padding: 8px;
+    text-align: left;
+}

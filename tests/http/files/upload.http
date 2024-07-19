@@ -1,0 +1,64 @@
+### Test Request 1: Upload a Text File (Allowed)
+POST http://localhost:56733/file/upload
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="file"; filename="example.txt"
+Content-Type: text/plain
+
+< ../../sample_files/example.txt
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+### Test Request 2: Upload a PDF File (Allowed)
+POST http://localhost:56733/file/upload
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="file"; filename="example.pdf"
+Content-Type: application/pdf
+
+< ../../sample_files/example.pdf
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+### Test Request 3: Attempt to Upload an Executable File (Disallowed)
+POST http://localhost:56733/file/upload
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="file"; filename="example.exe"
+Content-Type: application/octet-stream
+
+< ../../sample_files/example.exe
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+### Test Request 4: Attempt to Upload an Image File (Allowed)
+POST http://localhost:56733/file/upload
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="file"; filename="example.png"
+Content-Type: image/png
+
+< ../../sample_files/example.png
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+### Test Request 5: Attempt to Upload a File with No Selected File Part
+POST http://localhost:56733/file/upload
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="file"; filename=""
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+
+### Test Request 6: Attempt to Upload a File with Empty Filename
+POST http://localhost:56733/file/upload
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="file"; filename=""
+Content-Type: application/octet-stream
+
+< ../../sample_files/example.txt
+------WebKitFormBoundary7MA4YWxkTrZu0gW--

@@ -1,0 +1,4 @@
+@name = 'Download a file by ID'
+
+# GET request to download a file by ID
+GET http://localhost:56733/file/download/1

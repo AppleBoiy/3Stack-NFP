@@ -1,0 +1,2 @@
+#!/bin/bash
+echo "Hello, this is an executable file!"
